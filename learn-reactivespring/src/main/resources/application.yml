@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  data.mongodb:
+    host: localhost
+    port: 27017
+    database: local
+logging.level:
+  org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+  org.springframework.data.mongodb.core.ReactiveMongoTemplate: DEBUG
+---
+spring:
+  profiles: nonprod
+  data.mongodb:
+    host: localhost
+    port: 27017
+    database: local
+---
+spring:
+  profiles: prod
+  data.mongodb:
+    host: localhost
+    port: 27017
+    database: local
+---
+spring:
+  profiles: test
+logging.level:
+  org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+  org.springframework.data.mongodb.core.ReactiveMongoTemplate: DEBUG
